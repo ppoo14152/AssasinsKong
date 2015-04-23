@@ -1,1 +1,3 @@
-Hola Mayra
+<<<<<<< .mine
+Esta es una modificacion del archivo de prueba 1=======
+Hola Mayra>>>>>>> .r5
