@@ -20,6 +20,6 @@ public class Clase1 extends Actor
     public void add()
     {
         //metodo agregado por mayra
-        //Maria me cae gorda que bueno que no vino =) party from hell
+        //Holi boli crayoli :p
     }
 }
