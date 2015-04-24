@@ -76,7 +76,7 @@ public class Chavito extends Actor
 
     public void setMove()
     {
-        if(getX()<970 ){
+        if(getX()<970 && !Greenfoot.isKeyDown("space")){
             if (Greenfoot.isKeyDown("right")){
                 move(walkTimer);
                 walkTimer ++;
