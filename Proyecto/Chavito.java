@@ -4,10 +4,7 @@ public class Chavito extends Actor
 {
     GreenfootImage[] chavo = new GreenfootImage[7];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
     private boolean isWalking;
-    private int shootTimer;
     private int walkTimer;
-    private int walkTimer2;
-    private int jumpTimer;
     private int iBandera;
     private int iBandera2;
     private int iCount;
