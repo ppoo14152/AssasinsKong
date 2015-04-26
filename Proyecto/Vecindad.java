@@ -18,12 +18,12 @@ public class Vecindad extends World
     {
         /**
          * Dependiendo del nivel se añadira una platadforma diferente
-         * Tambien se añadira al actor principal del juego
-         * Y A sus respectivos enemigos
+         * Tambien se añadira al actor principal del juego en pociciones diferentes
+         * Asi como sus respectivos enemigos y obstaculos
          */
         if(iNivel==1){
-            addObject(chavo,50,465);
             addObject(plataforma,511,272);
+            addObject(chavo,50,485);
         }
     }
 }
