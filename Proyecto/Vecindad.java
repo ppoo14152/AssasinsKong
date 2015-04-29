@@ -3,23 +3,33 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
     public Chavito chavo;
+    public Chilindrina chilin;
     public Plataforma1 plataforma;
+    public Plataforma1 plataforma1;
+    public Plataforma1 plataforma2;
     public Escalera stair;
     public Escalera stair2;
     public Escalera stair3;
     public Escalera stair4;
     public Escalera stair5;
+    public Escalera stair6;
+    public LifeSpawn barra;
     private int iNivel;
     public Vecindad()
     {    
         super(1020, 544, 1); 
         chavo = new Chavito();
+        chilin = new Chilindrina();
         plataforma = new Plataforma1();
+        plataforma1 = new Plataforma1();
+        plataforma2 = new Plataforma1();
         stair = new Escalera();
         stair2 = new Escalera();
         stair3 = new Escalera();
         stair4 = new Escalera();
         stair5 = new Escalera();
+        stair6 = new Escalera();
+        barra = new LifeSpawn();
         iNivel = 1;
         Aniadir();
     }
@@ -27,18 +37,20 @@ public class Vecindad extends World
     public void Aniadir()
     {
         /**
-         * Dependiendo del nivel se añadira una platadforma diferente
-         * Tambien se añadira al actor principal del juego en pociciones diferentes
-         * Asi como sus respectivos enemigos y obstaculos
+         * Dependiendo del nivel
+         * se añadira un numero determinado de escaleras
+         * y pocicion del las plataformas
          */
-        if(iNivel==1){
-            addObject(plataforma,511,282);
-            addObject(stair,420,435);
-            addObject(stair2,302,135);
-            addObject(stair3,265,285);
-            addObject(stair4,528,285);
-            addObject(stair5,680,135);
-            addObject(chavo,50,500);
+        if(iNivel == 1){            
+            addObject(plataforma1,511,282);
+            addObject(stair,280,450);
+            addObject(stair2,750,450);
+            addObject(stair3,640,298);
+            addObject(stair4,465,145);
+            addObject(stair5,750,145);
+            addObject(chavo,50,485);
+            addObject(chilin,700,40);
+            addObject(barra,80,50);
         }
     }
 }

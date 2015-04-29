@@ -9,7 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Chilindrina extends Actor
 {
-    public GreenfootImage[] chilindrina = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
+    public GreenfootImage[] chilindrina = new GreenfootImage[10];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
+    int iDireccion;
     public void act() 
     {
         chilindrina[0] = new GreenfootImage("chilin1.png");
@@ -22,9 +23,11 @@ public class Chilindrina extends Actor
         chilindrina[7] = new GreenfootImage("chilin4_izq.png");
         chilindrina[8] = new GreenfootImage("chilin5.png");
         chilindrina[9] = new GreenfootImage("chilin5_izq.png");
-        chilindrina[10] = new GreenfootImage("chilin6.png");
-        chilindrina[11] = new GreenfootImage("chilin6_izq.png");
-        chilindrina[12] = new GreenfootImage("chilin7.png");
-        chilindrina[13] = new GreenfootImage("chilin7_izq.png");
-    }    
+        iDireccion = 1;
+    }  
+    public void animate()
+    {
+        //Si direccion es igual a 1, se mostrara las imagenes del lado derecho, si es izquierda se ostraran del lado derecho
+        
+    }
 }
