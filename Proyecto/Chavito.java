@@ -6,6 +6,7 @@ public class Chavito extends Actor
     private boolean isAbove;   //  Se activa cuando esta sobre una plataforma
     private boolean inStair;
     private boolean gravity;
+    public boolean bWin;
     private int upStair;   
     private int walkTimer;
     private int iBandera;
@@ -39,6 +40,7 @@ public class Chavito extends Actor
         isAbove = false;
         gravity = false;
         inStair = false;
+        bWin = false;
     }
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
@@ -56,6 +58,7 @@ public class Chavito extends Actor
         setUpStairs();     //metodo que ejecuta subir escaleras
         setDownStairs();    //metodo que ejecuta el bajar escaleras
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
+        setWin();   //si win es true el jugador gana, si no pierde
     }
 
     public void setJump()
@@ -73,7 +76,7 @@ public class Chavito extends Actor
                 }
                 setLocation(getX(),getY()-1);
                 iCount++;
-                if(iCount==65){
+                if(iCount==65 || isTouching(Plataformita.class)){
                     iBandera=0;
                     iBandera2=1;
                 }
@@ -88,7 +91,7 @@ public class Chavito extends Actor
                 }
                 setLocation(getX(),getY()+1);
                 iCount--;
-                if(iCount==0){
+                if(iCount==0 || isTouching(Plataformita.class)){
                     iBandera2=0;
                     if(iDireccion == 0){
                         setImage(chavo[0]);
@@ -251,5 +254,13 @@ public class Chavito extends Actor
                 }
             }              
         }
+    }
+
+    public void setWin()
+    {
+        if(isTouching(Paty.class)){
+            bWin = true;
+        }
+
     }
 }

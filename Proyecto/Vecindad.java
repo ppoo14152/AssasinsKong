@@ -7,12 +7,17 @@ public class Vecindad extends World
     public Plataforma1 plataforma;
     public Plataforma1 plataforma1;
     public Plataforma1 plataforma2;
+    public Plataformita p1;
+    public Plataforma pla1;
+    public Plataforma pla2;
+    public Plataforma pla3;
     public Escalera stair;
     public Escalera stair2;
     public Escalera stair3;
     public Escalera stair4;
     public Escalera stair5;
     public Escalera stair6;
+    public Paty popis;
     public LifeSpawn barra;
     private int iNivel;
     public Vecindad()
@@ -22,7 +27,9 @@ public class Vecindad extends World
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
         plataforma1 = new Plataforma1();
-        plataforma2 = new Plataforma1();
+        pla1 = new Plataforma();
+        pla2 = new Plataforma();
+        pla3 = new Plataforma();
         stair = new Escalera();
         stair2 = new Escalera();
         stair3 = new Escalera();
@@ -30,7 +37,14 @@ public class Vecindad extends World
         stair5 = new Escalera();
         stair6 = new Escalera();
         barra = new LifeSpawn();
+        p1 = new Plataformita();
+        popis = new Paty();
         iNivel = 1;
+        act();
+    }
+
+    public void act()
+    {
         Aniadir();
     }
 
@@ -41,15 +55,21 @@ public class Vecindad extends World
          * se añadira un numero determinado de escaleras
          * y pocicion del las plataformas
          */
-        if(iNivel == 1){            
+        if(iNivel == 1){
+            //getWorld().addObject(new Escenarios(), 0,700,50);
+            addObject(pla1,511,245);
+            addObject(pla2,473,395);
+            addObject(pla3,549,95);
             addObject(plataforma1,511,282);
             addObject(stair,280,450);
             addObject(stair2,750,450);
             addObject(stair3,640,298);
             addObject(stair4,465,145);
             addObject(stair5,750,145);
-            addObject(chavo,50,485);
+            addObject(chavo,950,485);
             addObject(chilin,700,40);
+            addObject(p1,930,100);
+            addObject(popis,950,50);
             addObject(barra,80,50);
         }
     }
