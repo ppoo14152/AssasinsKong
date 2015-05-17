@@ -85,5 +85,11 @@ public class Vecindad extends World
             addObject(p1,950,180);
             addObject(popis,970,120);
         }
+        if(iNivel == 3){
+        }
+        if(iNivel == 4){
+        }
+        if(iNivel == 5){
+        }
     }
 }
