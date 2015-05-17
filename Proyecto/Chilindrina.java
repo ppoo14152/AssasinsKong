@@ -39,23 +39,23 @@ public class Chilindrina extends Actor
     {
         //Si direccion es igual a 1, se mostrara las imagenes del lado derecho, si es izquierda se ostraran del lado derecho
         if(iDr == 1){
-            if(iAnimacion == 20){
+            if(iAnimacion == 15){
                 setImage(chilindrina[1]);
             }
-            if(iAnimacion == 40){
+            if(iAnimacion == 30){
                 setImage(chilindrina[3]);
             }
-            if(iAnimacion == 60){
+            if(iAnimacion == 45){
                 setImage(chilindrina[5]);
             }
-            if(iAnimacion == 80){
+            if(iAnimacion == 60){
                 setImage(chilindrina[7]);
             }
-            if(iAnimacion == 100){
+            if(iAnimacion == 75){
                 setImage(chilindrina[9]);
                 getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
-            if(iAnimacion == 120){
+            if(iAnimacion == 90){
                 iAnimacion = 0;
             }
             iAnimacion++;

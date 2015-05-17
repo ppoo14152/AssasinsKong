@@ -15,19 +15,19 @@ public class Obstaculos extends Chilindrina
     private int iY;
     private Random iRandom;
     private int iNum;
-    private Boolean bTouch;
+    private Boolean onFloor;
     public Obstaculos(int iTi)
     {
         obstaculos[0] = new GreenfootImage("manzana.png");
         obstaculos[1] = new GreenfootImage("triciclo.png");
         obstaculos[2] = new GreenfootImage("pelota.png");
         obstaculos[3] = new GreenfootImage("platano.png");
-        iDireccion = 1;
+        iDireccion = -1;
         iTipo = iTi;
         setImage( obstaculos[iTi] );
         iRandom = new Random();
         iNum = iRandom.nextInt(2);
-        bTouch = false;
+        onFloor = false;
     }
 
     public void act() 
@@ -37,33 +37,40 @@ public class Obstaculos extends Chilindrina
 
     public void setFall()
     {
-        if(bTouch == false){
+        /**
+         * Mientras onFloor sea falso significa que el obstaculo se esta moviendo en las plataformas
+         * Si onFloor es verdadero el obstaculo se esta moviendo en el piso
+         */
+        if(onFloor == false){
+            if(isTouching(Escalera.class) || (!isTouching(Plataforma.class))){
+                setLocation(getX(),getY()+2);
+            }
+            if(!isTouching(Escalera.class) || (isTouching(Plataforma.class))){
+                if(iDireccion == 1){
+                    move(2);
+                }
+                if(iDireccion == -1){
+                    move(-2);
+                }
+            }
+            if((isTouching(Escalera.class)) && (!isTouching(Plataforma.class))){
+                iDireccion = ((iDireccion) * (-1));
+            }
+            if( (getY()==500)){
+                onFloor = true;
+            }
+        }
+        if(onFloor == true){
             if(iDireccion == 1){
                 move(2);
             }
-            if(iDireccion == 2){
+            if(iDireccion == -1){
                 move(-2);
             }
-        }
-        if(isTouching(Escalera.class)){
-            bTouch = true;
-            while((isTouching(Escalera.class)) && (bTouch == true)){
-                setLocation(getX(),getY()+2);
-                if(isTouching(Plataforma.class)){
-                    if(iDireccion == 2){
-                        iDireccion = 1;
-                    }
-                    if(iDireccion == 1){
-                        iDireccion = 2;
-                    } 
-                    bTouch = false;
-                }
+            if( (getX()<=20) || (getX()>1000) ){
+                getWorld().removeObject(this);
             }
         }
-        if( getX()<1 && getY()> 1018){
-            World destroy;
-            destroy = getWorld();
-            destroy.removeObject(this);
-        }
+
     }
 }

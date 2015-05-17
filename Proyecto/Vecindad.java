@@ -23,8 +23,12 @@ public class Vecindad extends World
     private int iNivel;
     public Vecindad()
     {    
-        super(1020, 544, 1); 
-        //escenario[0] = new GreenfootImage("Cenario - 01.bmp");
+        super(1020, 544, 1);
+        escenario[0] = new GreenfootImage("Cenario-01.bmp");
+        escenario[1] = new GreenfootImage("Cenario-02.bmp");
+        escenario[2] = new GreenfootImage("Cenario-03.bmp");
+        escenario[3] = new GreenfootImage("Cenario-04.bmp");
+        escenario[4] = new GreenfootImage("Cenario-05.bmp");
         chavo = new Chavito();
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
@@ -57,7 +61,6 @@ public class Vecindad extends World
          * y pocicion del las plataformas
          */
         if(iNivel == 1){
-            //getWorld().addObject(new Escenarios(), 0,700,50);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);

@@ -7,6 +7,7 @@ public class Chavito extends Actor
     private boolean inStair;
     private boolean gravity;
     public boolean bWin;
+    private boolean isTouch;
     private int upStair;   
     private int walkTimer;
     private int iBandera;
@@ -14,6 +15,10 @@ public class Chavito extends Actor
     private int iCount;
     private int iDireccion;
     public int iLife;
+    private int iAnimacion;
+    private int iEdo;
+    public int iNivel;
+    private int iAuxiliar;
     public Chavito()
     {
         chavo[0] = new GreenfootImage("chavo1.png");//camina1
@@ -37,18 +42,25 @@ public class Chavito extends Actor
         iBandera2 = 0; 
         iCount = 0;
         iDireccion = 0;
+        iAnimacion = 0;
+        iEdo = 0;
+        iNivel = 1;
+        iAuxiliar = 0;
         isAbove = false;
         gravity = false;
         inStair = false;
         bWin = false;
+        isTouch = false;
     }
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
     {
         if(iLife < 5){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
-            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
         }    
+        else{
+            setDead();
+        }
     }
     //setActions() se encarga de checar que tecla esta presionada para asi determinar que hacer//
     public void setActions()
@@ -61,13 +73,9 @@ public class Chavito extends Actor
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
         setWin();   //si win es true el jugador gana, si no pierde
         setTouch(); //Si es tocado por un obstaculo pierde vida
+        setDead(); //Corresponde a la animacion de la muerte del chavo =(
     }
-    public void setTouch()
-    {
-        if(isTouching(Obstaculos.class)){
-            iLife++;
-        }
-    }
+
     public void setJump()
     {
         if (Greenfoot.isKeyDown("space")){
@@ -267,7 +275,49 @@ public class Chavito extends Actor
     {
         if(isTouching(Paty.class)){
             bWin = true;
+            iNivel++;
         }
+    }
 
+    public void setTouch()
+    {
+        if(!isTouching(Obstaculos.class) && (iAuxiliar == 0)){
+            isTouch = false;
+        }
+        if(isTouching(Obstaculos.class)){
+            isTouch = true;
+            iAuxiliar = 1;
+        }
+        if(isTouch == true && (iAuxiliar == 1)){
+            iLife++;
+            isTouch = false;
+            iAuxiliar = 0;
+            getWorld().removeObject(this);
+            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
+        } 
+    }
+
+    public void setDead()
+    {
+        if(iAnimacion == 0){
+            if(iDireccion == 0){
+                setImage(chavo[9]);
+            }
+            if(iDireccion == 1){
+                setImage(chavo[11]);
+            }
+        }
+        if(iAnimacion == 15){
+            if(iDireccion == 0){
+                setImage(chavo[10]);
+            }
+            if(iDireccion == 1){
+                setImage(chavo[12]);
+            }
+        }
+        if(iAnimacion == 20){
+            getWorld().addObject(new Letreros( 0 ), 80, 50);
+        }
+        iAnimacion++;
     }
 }
