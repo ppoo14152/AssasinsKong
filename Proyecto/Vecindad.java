@@ -2,12 +2,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
-    public GreenfootImage[] escenario = new GreenfootImage[5];
     public Chavito chavo;
     public Chilindrina chilin;
     public Plataforma1 plataforma;
-    public Plataforma1 plataforma1;
-    public Plataforma1 plataforma2;
+    public Plataforma2 plataforma1;
     public Plataformita p1;
     public Plataforma pla1;
     public Plataforma pla2;
@@ -18,21 +16,17 @@ public class Vecindad extends World
     public Escalera stair4;
     public Escalera stair5;
     public Escalera stair6;
+    public Escalera stair7;
     public Paty popis;
     public LifeSpawn barra;
     private int iNivel;
     public Vecindad()
     {    
         super(1020, 544, 1);
-        escenario[0] = new GreenfootImage("Cenario-01.bmp");
-        escenario[1] = new GreenfootImage("Cenario-02.bmp");
-        escenario[2] = new GreenfootImage("Cenario-03.bmp");
-        escenario[3] = new GreenfootImage("Cenario-04.bmp");
-        escenario[4] = new GreenfootImage("Cenario-05.bmp");
         chavo = new Chavito();
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
-        plataforma1 = new Plataforma1();
+        plataforma1 = new Plataforma2();
         pla1 = new Plataforma();
         pla2 = new Plataforma();
         pla3 = new Plataforma();
@@ -42,6 +36,7 @@ public class Vecindad extends World
         stair4 = new Escalera();
         stair5 = new Escalera();
         stair6 = new Escalera();
+        stair7 = new Escalera();
         p1 = new Plataformita();
         popis = new Paty();
         iNivel = 1;
@@ -64,7 +59,7 @@ public class Vecindad extends World
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
-            addObject(plataforma1,511,282);
+            addObject(plataforma,511,282);
             addObject(stair,280,450);
             addObject(stair2,750,450);
             addObject(stair3,640,298);
@@ -74,6 +69,21 @@ public class Vecindad extends World
             addObject(chilin,700,40);
             addObject(p1,930,100);
             addObject(popis,950,50);
+        }
+        if(iNivel == 2){  
+            addObject(pla1,411,246);
+            addObject(pla2,540,395);
+            addObject(pla3,571,90);
+            addObject(plataforma1,510,282);
+            addObject(stair,300,450);
+            addObject(stair2,750,450);
+            addObject(stair3,500,298);
+            addObject(stair4,600,145);
+            addObject(stair5,400,145);
+            addObject(chavo,100,485);
+            addObject(chilin,700,40);
+            addObject(p1,950,180);
+            addObject(popis,970,120);
         }
     }
 }
