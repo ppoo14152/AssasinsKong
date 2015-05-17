@@ -2,6 +2,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
+    public GreenfootImage[] escenario = new GreenfootImage[5];
     public Chavito chavo;
     public Chilindrina chilin;
     public Plataforma1 plataforma;
@@ -23,6 +24,7 @@ public class Vecindad extends World
     public Vecindad()
     {    
         super(1020, 544, 1); 
+        //escenario[0] = new GreenfootImage("Cenario - 01.bmp");
         chavo = new Chavito();
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
@@ -36,7 +38,6 @@ public class Vecindad extends World
         stair4 = new Escalera();
         stair5 = new Escalera();
         stair6 = new Escalera();
-        barra = new LifeSpawn();
         p1 = new Plataformita();
         popis = new Paty();
         iNivel = 1;
@@ -66,11 +67,10 @@ public class Vecindad extends World
             addObject(stair3,640,298);
             addObject(stair4,465,145);
             addObject(stair5,750,145);
-            addObject(chavo,950,485);
+            addObject(chavo,100,485);
             addObject(chilin,700,40);
             addObject(p1,930,100);
             addObject(popis,950,50);
-            addObject(barra,80,50);
         }
     }
 }

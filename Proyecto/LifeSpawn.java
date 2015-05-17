@@ -10,7 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class LifeSpawn extends Chavito
 {
     public GreenfootImage[] life = new GreenfootImage[6];
-    public void act() 
+    private int iLifes;
+    public LifeSpawn(int iTi)
     {
         life[0] = new GreenfootImage("LifeSpawn1.png");
         life[1] = new GreenfootImage("LifeSpawn2.png");
@@ -18,5 +19,11 @@ public class LifeSpawn extends Chavito
         life[3] = new GreenfootImage("LifeSpawn4.png");
         life[4] = new GreenfootImage("LifeSpawn5.png");
         life[5] = new GreenfootImage("LifeSpawn6.png");
+        iLifes = iTi;
+        setImage( life[iTi] );
+    }
+    public void act() 
+    {
+        
     }    
 }

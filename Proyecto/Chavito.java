@@ -30,7 +30,7 @@ public class Chavito extends Actor
         chavo[11] = new GreenfootImage("chavo7.png");//muerto
         chavo[12] = new GreenfootImage("chavo7_izq.png");//muerto izq
         chavo[13] = new GreenfootImage("chavo4_izq.png");//subir
-        iLife = 1;
+        iLife = 0;
         upStair = 0;
         walkTimer = 0;
         iBandera = 0;
@@ -45,9 +45,10 @@ public class Chavito extends Actor
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
     {
-        if(iLife < 7){
+        if(iLife < 5){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
-        }
+            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
+        }    
     }
     //setActions() se encarga de checar que tecla esta presionada para asi determinar que hacer//
     public void setActions()
@@ -59,8 +60,14 @@ public class Chavito extends Actor
         setDownStairs();    //metodo que ejecuta el bajar escaleras
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
         setWin();   //si win es true el jugador gana, si no pierde
+        setTouch(); //Si es tocado por un obstaculo pierde vida
     }
-
+    public void setTouch()
+    {
+        if(isTouching(Obstaculos.class)){
+            iLife++;
+        }
+    }
     public void setJump()
     {
         if (Greenfoot.isKeyDown("space")){

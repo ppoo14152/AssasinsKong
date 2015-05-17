@@ -10,9 +10,9 @@ import java.util.Random;
 public class Chilindrina extends Actor
 {
     public GreenfootImage[] chilindrina = new GreenfootImage[10];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
-    int iDr;
-    int iAnimacion;
-    Random iRandom;
+    private int iDr;
+    private int iAnimacion;
+    private Random iRandom;
     public Chilindrina()
     {
         chilindrina[0] = new GreenfootImage("chilin1.png");
