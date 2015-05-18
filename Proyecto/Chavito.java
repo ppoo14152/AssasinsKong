@@ -58,8 +58,8 @@ public class Chavito extends Actor
         if(iLife < 5){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
         }    
-        else{
-            setDead();
+        if(iLife == 5){
+            setDead(); //Corresponde a la animacion de la muerte del chavo =(
         }
     }
     //setActions() se encarga de checar que tecla esta presionada para asi determinar que hacer//
@@ -73,7 +73,6 @@ public class Chavito extends Actor
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
         setWin();   //si win es true el jugador gana, si no pierde
         setTouch(); //Si es tocado por un obstaculo pierde vida
-        setDead(); //Corresponde a la animacion de la muerte del chavo =(
     }
 
     public void setJump()
@@ -81,7 +80,7 @@ public class Chavito extends Actor
         if (Greenfoot.isKeyDown("space")){
             iBandera = 1;
         }
-        if (iBandera==1 || iBandera2==1){
+        if (iBandera == 1 || iBandera2 == 1){
             if(iBandera==1){
                 if(iDireccion == 0){
                     setImage(chavo[7]);
@@ -91,7 +90,7 @@ public class Chavito extends Actor
                 }
                 setLocation(getX(),getY()-1);
                 iCount++;
-                if(iCount==65 || isTouching(Plataformita.class)){
+                if(iCount == 65 || isTouching(Plataformita.class)){
                     iBandera=0;
                     iBandera2=1;
                 }
@@ -106,7 +105,7 @@ public class Chavito extends Actor
                 }
                 setLocation(getX(),getY()+1);
                 iCount--;
-                if(iCount==0 || isTouching(Plataformita.class)){
+                if(iCount == 0 || isTouching(Plataformita.class)){
                     iBandera2=0;
                     if(iDireccion == 0){
                         setImage(chavo[0]);
@@ -276,25 +275,31 @@ public class Chavito extends Actor
         if(isTouching(Paty.class)){
             bWin = true;
             iNivel++;
+            if(iNivel < 5){
+                getWorld().addObject(new Letreros( 1 ), 500, 300);
+                getWorld().addObject(new Letreros( 2 ), 500, 700);
+            }
+            if(iNivel == 5){
+                getWorld().addObject(new Letreros( 1 ), 500, 300);
+            }
         }
     }
 
     public void setTouch()
     {
-        if(!isTouching(Obstaculos.class) && (iAuxiliar == 0)){
+        getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
+        if(!isTouching(Obstaculos.class)){
             isTouch = false;
         }
-        if(isTouching(Obstaculos.class)){
+        if(isTouching(Obstaculos.class) && isTouch == false){
             isTouch = true;
-            iAuxiliar = 1;
+            iLife = iLife + 1;
         }
-        if(isTouch == true && (iAuxiliar == 1)){
-            iLife++;
-            isTouch = false;
-            iAuxiliar = 0;
-            getWorld().removeObject(this);
-            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
-        } 
+        if(isTouching(Torta.class) && isTouch == false){
+            isTouch = true;
+            iLife = iLife - 1;
+            //getWorld().removeObject(Torta().class);
+        }
     }
 
     public void setDead()
@@ -316,7 +321,7 @@ public class Chavito extends Actor
             }
         }
         if(iAnimacion == 20){
-            getWorld().addObject(new Letreros( 0 ), 80, 50);
+            getWorld().addObject(new Letreros( 0 ), 500, 300);
         }
         iAnimacion++;
     }
