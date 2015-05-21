@@ -1,4 +1,3 @@
-// Create a new world with 1024x544 cells with a cell size of 1x1 pixels.
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
@@ -23,6 +22,7 @@ public class Vecindad extends World
     public Vecindad()
     {    
         super(1020, 544, 1);
+        barra = new LifeSpawn(0);
         chavo = new Chavito();
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
@@ -40,7 +40,8 @@ public class Vecindad extends World
         p1 = new Plataformita();
         popis = new Paty();
         iNivel = 1;
-        act();
+        //act();
+        
     }
 
     public void act()
@@ -55,6 +56,7 @@ public class Vecindad extends World
          * se añadira un numero determinado de escaleras
          * y pocicion del las plataformas
          */
+        addObject(barra, 80, 50);
         if(iNivel == 1){
             addObject(pla1,511,245);
             addObject(pla2,473,395);

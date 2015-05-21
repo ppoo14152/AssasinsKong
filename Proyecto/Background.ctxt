@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=iPos\ x\ y\ iFondo
+comment0.target=Background(int,\ int,\ int,\ int)
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ returnPos()
+comment3.params=
+comment3.target=void\ cargaImagenesTutorial()
+comment4.params=
+comment4.target=void\ sigTutorial()
+comment5.params=
+comment5.target=void\ Tutorial()
+comment6.params=iLevel
+comment6.target=void\ dameNivel(int)
+numComments=7

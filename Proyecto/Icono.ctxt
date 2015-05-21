@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=
+comment1.target=void\ mueve()
+comment2.params=
+comment2.target=void\ mouseSobreBoton()
+comment3.params=
+comment3.target=void\ desapareceBotonPlay()
+comment4.params=
+comment4.target=void\ desapareceBotonTutorial()
+comment5.params=
+comment5.target=void\ desapareceBotonRecords()
+comment6.params=
+comment6.target=void\ sonidoBoton()
+numComments=7

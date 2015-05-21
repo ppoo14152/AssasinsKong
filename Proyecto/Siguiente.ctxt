@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=tipo\ actor
+comment0.target=Siguiente(int,\ greenfoot.Actor)
+comment1.params=
+comment1.target=void\ act()
+numComments=2
