@@ -21,12 +21,12 @@ public class Menu extends World
     private int contador;
     public Menu()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        //Crea el mundo del menu
         super(1020, 544, 1); 
         iCount = 0;
         iIniTutorial = 0;
-        contador=0;///////
-        iniciaJuego=false;/////////
+        contador=0;
+        iniciaJuego=false;
         setMenu();
     }
 

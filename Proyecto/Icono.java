@@ -21,30 +21,6 @@ public class Icono extends Actor
         soundBoton = new GreenfootSound("Sound1.wav");
     }
     
-    public void mueve(){
-        if(iNum == 0){          
-            if(getY()<360){ 
-                setLocation(getX(),getY()+4);
-            }else{
-                iNum = 1;
-            }        
-        }
-
-        if(iNum == 1){    
-            if(getY()>300){
-                setLocation(getX(),getY()-4);
-            }
-            else{
-                iNum = 2;
-            }
-        }
-        if(iNum == 2){
-            if(getY()<360){
-                setLocation(getX(),getY()+4);
-            }      
-        }
-    }
-    
     public void mouseSobreBoton(){
         if(Greenfoot.mouseMoved(this)){
             this.getImage().scale(160,60);
