@@ -37,25 +37,43 @@ public class Vecindad extends World
         stair5 = new Escalera();
         stair6 = new Escalera();
         stair7 = new Escalera();
-        p1 = new Plataformita();
         popis = new Paty();
-        iNivel = 1;
-        //act();
-        
+        iNivel = 1;        
     }
 
     public void act()
     {
-        Aniadir();
+        Aniadir(iNivel);
+    }
+    
+    public void crear()
+    {
+        barra = new LifeSpawn(0);
+        chilin = new Chilindrina();
+        plataforma = new Plataforma1();
+        plataforma1 = new Plataforma2();
+        pla1 = new Plataforma();
+        pla2 = new Plataforma();
+        pla3 = new Plataforma();
+        stair = new Escalera();
+        stair2 = new Escalera();
+        stair3 = new Escalera();
+        stair4 = new Escalera();
+        stair5 = new Escalera();
+        stair6 = new Escalera();
+        stair7 = new Escalera();
+        popis = new Paty();
+        
     }
 
-    public void Aniadir()
+    public void Aniadir(int iAcomodar)
     {
         /**
          * Dependiendo del nivel
          * se añadira un numero determinado de escaleras
          * y pocicion del las plataformas
          */
+        iNivel = iAcomodar;
         addObject(barra, 80, 50);
         if(iNivel == 1){
             addObject(pla1,511,245);
@@ -69,8 +87,7 @@ public class Vecindad extends World
             addObject(stair5,750,145);
             addObject(chavo,100,485);
             addObject(chilin,700,40);
-            addObject(p1,930,100);
-            addObject(popis,950,50);
+            addObject(popis,800,50);
         }
         if(iNivel == 2){  
             addObject(pla1,411,246);
@@ -94,4 +111,23 @@ public class Vecindad extends World
         if(iNivel == 5){
         }
     }
+    public void eliminaVecindad()
+    {
+        removeObject(popis);
+        removeObject(pla1);
+        removeObject(pla2);
+        removeObject(pla3);
+        removeObject(plataforma);
+        removeObject(plataforma1);
+        removeObject(stair);
+        removeObject(stair2);
+        removeObject(stair3);
+        removeObject(stair4);
+        removeObject(stair5);
+        removeObject(chilin);
+        removeObject(p1);
+        crear();
+        Aniadir(2);
+    }
+    
 }

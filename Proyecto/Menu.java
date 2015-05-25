@@ -2,16 +2,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Menu here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel)
+ * Creditos de codigo para CaracteresLarousse
+ * @version (2)
  */
 public class Menu extends World
 {
-
-    /**
-     * Constructor for objects of class Menu.
-     * 
-     */
     private Tutorial tAyuda;
     private Jugar jJuego;
     private Records rScores;
@@ -68,9 +64,9 @@ public class Menu extends World
         tAyuda = new Tutorial();
         addObject(tAyuda,380,450);
         cQuien = new Creditos(1);
-        addObject(cQuien,630,450);
+        addObject(cQuien,880,450);
         rScores = new Records();
-        addObject(rScores,880,450);
+        addObject(rScores,630,450);
     }
 
     public void desapareceTutorial(){

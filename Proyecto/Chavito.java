@@ -90,7 +90,7 @@ public class Chavito extends Actor
                 }
                 setLocation(getX(),getY()-1);
                 iCount++;
-                if(iCount == 65 || isTouching(Plataformita.class)){
+                if(iCount == 65 || isTouching(Plataformita.class)==true){
                     iBandera=0;
                     iBandera2=1;
                 }
@@ -282,6 +282,12 @@ public class Chavito extends Actor
             if(iNivel == 5){
                 getWorld().addObject(new Letreros( 1 ), 500, 300);
             }
+            World wAux1;
+            World wAux2;
+            wAux1 = getWorld();
+            wAux2 = getWorld();
+            ((Vecindad)wAux1).eliminaVecindad();
+            //((Vecindad)wAux2).Aniadir(iNivel);
         }
     }
 

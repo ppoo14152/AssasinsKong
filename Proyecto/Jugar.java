@@ -20,7 +20,6 @@ public class Jugar extends Icono
             desaparece = 1; 
             World aux=getWorld();            
             ((Menu)aux).iniciarJuego();
-            //Greenfoot.setWorld(new StickmanWorld());
         }
         if(desaparece==1)
         {

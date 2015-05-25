@@ -60,9 +60,12 @@ public class Icono extends Actor
         if(iNum == 36){ 
             World aux = getWorld();
             ((Menu)aux).desapareceTutorial();
-            
-            iNum=0;getWorld().removeObject(this);
-        }    
+            iNum = 0;
+            getWorld().removeObject(this);
+        }   
+        
+        desapareceBotonRecords();
+        desapareceBotonTutorial();
     }
     
     public void desapareceBotonTutorial(){
@@ -81,8 +84,8 @@ public class Icono extends Actor
         turn(10);   
         if(iNum == 36){ 
             World aux=getWorld();
-            ((Menu)aux).desaparecePlay();
-            iNum=0;
+            ((Menu)aux).desapareceRecords();
+            iNum = 0;
             getWorld().removeObject(this);
         }    
     }

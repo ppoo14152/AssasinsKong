@@ -82,7 +82,5 @@ public class Chilindrina extends Actor
             }
             iAnimacion++;
         }
-    }
-    
-    
+    }   
 }
