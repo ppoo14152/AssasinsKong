@@ -18,14 +18,8 @@ public class Tutorial extends Icono
         { 
             World aux = getWorld();
             ((Menu)aux).iniciaTutorial();
-            desaparece=1;
             this.sonidoBoton();
-        }
-        
-        if(desaparece==1){ 
-            desapareceBotonTutorial();
-        }
-        
+        } 
         mouseSobreBoton();
     } 
     

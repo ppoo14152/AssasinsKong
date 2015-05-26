@@ -274,7 +274,6 @@ public class Chavito extends Actor
     {
         if(isTouching(Paty.class)){
             bWin = true;
-            iNivel++;
             if(iNivel < 5){
                 getWorld().addObject(new Letreros( 1 ), 500, 300);
                 getWorld().addObject(new Letreros( 2 ), 500, 700);
@@ -287,7 +286,8 @@ public class Chavito extends Actor
             wAux1 = getWorld();
             wAux2 = getWorld();
             ((Vecindad)wAux1).eliminaVecindad();
-            //((Vecindad)wAux2).Aniadir(iNivel);
+            iNivel++;
+            ((Vecindad)wAux2).Aniadir(iNivel);
         }
     }
 

@@ -17,13 +17,8 @@ public class Jugar extends Icono
         if(Greenfoot.mouseClicked(this))
         {
             this.sonidoBoton();
-            desaparece = 1; 
             World aux=getWorld();            
             ((Menu)aux).iniciarJuego();
-        }
-        if(desaparece==1)
-        {
-            desapareceBotonPlay();
         }
         mouseSobreBoton();
     }

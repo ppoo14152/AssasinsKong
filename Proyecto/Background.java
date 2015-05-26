@@ -1,26 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Background here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Se encarga de colocar todas las imagens de fondo tales como elmenu
+ * Tutoriales y Creditos
+ * @author (Daniel) 
+ * @version (26/05/15)
  */
 public class Background extends Actor
 {
-    /**
-     * Act - do whatever the Background wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private GreenfootImage escenario1 = new GreenfootImage("Cenario-01.bmp");
     private GreenfootImage escenario2 = new GreenfootImage("Cenario-02.bmp");
     private GreenfootImage escenario3 = new GreenfootImage("Cenario-03.bmp");
     private GreenfootImage escenario4 = new GreenfootImage("Cenario-04.bmp");
     private GreenfootImage escenario5 = new GreenfootImage("Cenario-05.bmp");
+    private GreenfootImage menu  = new GreenfootImage("Fondo.jpg");
     private GreenfootImage tutorial1;
     private GreenfootImage tutorial2;
-    private GreenfootImage tutorial3;
-    private GreenfootImage menu  = new GreenfootImage("Fondo.jpg");
+    private GreenfootImage tutorial3; 
     private int iNum;
     private int x1;
     private int y1;
@@ -49,7 +45,7 @@ public class Background extends Actor
             cargaImagenesTutorial();
         }
     }
-      
+
     public void act() 
     {
         if(tBack == 0){
@@ -74,10 +70,10 @@ public class Background extends Actor
     }
 
     public void sigTutorial(){
-        if(tutorial != 120){
+        if(tutorial != 200){
             tutorial++;
         }
-        if(tutorial == 120){
+        if(tutorial == 200){
             World aux = getWorld(); 
             ((Menu)aux).quitaTutorial();
         }
@@ -87,10 +83,10 @@ public class Background extends Actor
         if(tutorial == 0){
             setImage(tutorial1);
         }
-        if(tutorial == 60){
+        if(tutorial == 100){
             setImage(tutorial2);
         }
-        if(tutorial == 120){
+        if(tutorial == 200){
             setImage(tutorial3);
         } 
         sigTutorial();
