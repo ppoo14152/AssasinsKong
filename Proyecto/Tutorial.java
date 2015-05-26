@@ -13,9 +13,7 @@ public class Tutorial extends Icono
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
-    {
-        // Add your action code here.
-        //mueve();                         
+    {                       
         if(Greenfoot.mouseClicked(this))
         { 
             World aux = getWorld();
@@ -29,12 +27,14 @@ public class Tutorial extends Icono
         }
         
         mouseSobreBoton();
-    }    
+    } 
+    
     public Tutorial()
     { 
        this.getImage().scale(150,50);
        desaparece = 0;
     }
+    
     public void desaparece(){
         desaparece = 1;
     }

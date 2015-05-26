@@ -20,7 +20,6 @@ public class Background extends Actor
     private GreenfootImage tutorial1;
     private GreenfootImage tutorial2;
     private GreenfootImage tutorial3;
-    private GreenfootImage tutorial4;
     private GreenfootImage menu  = new GreenfootImage("Fondo.jpg");
     private int iNum;
     private int x1;
@@ -31,6 +30,7 @@ public class Background extends Actor
     private int iVel;
     private int iNivel = 1;
     public Background(int iPos, int x, int y, int iFondo){
+
         iNivel = 1;
         tBack = iFondo;
 
@@ -38,8 +38,7 @@ public class Background extends Actor
             setImage(menu);
         }
 
-        if(tBack == 1){            
-            setImage(escenario1);           
+        if(tBack == 1){                     
             iNum = iPos;
             x1=x;
             y1=y;  
@@ -50,7 +49,7 @@ public class Background extends Actor
             cargaImagenesTutorial();
         }
     }
-
+      
     public void act() 
     {
         if(tBack == 0){
@@ -69,35 +68,32 @@ public class Background extends Actor
     }
 
     public void cargaImagenesTutorial(){
-        tutorial1=new GreenfootImage("Tutorial1.png");
-        tutorial2=new GreenfootImage("Tutorial2.png");
-        tutorial3=new GreenfootImage("Tutorial3.png");     
-        tutorial4=new GreenfootImage("Tutorial4.png");  
+        tutorial1 = new GreenfootImage("Tutorial1.png");
+        tutorial2 = new GreenfootImage("Tutorial2.jpg");
+        tutorial3 = new GreenfootImage("Tutorial3.jpg");      
     }
 
     public void sigTutorial(){
-        if(tutorial!=3){
+        if(tutorial != 120){
             tutorial++;
         }
-        else{
-            World aux=getWorld(); 
+        if(tutorial == 120){
+            World aux = getWorld(); 
             ((Menu)aux).quitaTutorial();
         }
     }
 
     public void Tutorial(){
-        if(tutorial==0){
+        if(tutorial == 0){
             setImage(tutorial1);
         }
-        if(tutorial==1){
+        if(tutorial == 60){
             setImage(tutorial2);
         }
-        if(tutorial==2){
+        if(tutorial == 120){
             setImage(tutorial3);
-        }    
-        if(tutorial==3){
-            setImage(tutorial4);
-        }
+        } 
+        sigTutorial();
     }
 
     public void dameNivel(int iLevel)

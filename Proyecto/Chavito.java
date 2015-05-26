@@ -55,10 +55,10 @@ public class Chavito extends Actor
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
     {
-        if(iLife < 5){
+        if(iLife < 6){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
         }    
-        if(iLife == 5){
+        if(iLife == 6){
             setDead(); //Corresponde a la animacion de la muerte del chavo =(
         }
     }

@@ -59,7 +59,7 @@ public class Icono extends Actor
         iNum++;
         turn(10);   
         if(iNum == 36){ 
-            World aux=getWorld();
+            World aux = getWorld();
             ((Menu)aux).desapareceRecords();
             iNum = 0;
             getWorld().removeObject(this);

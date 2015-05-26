@@ -3,15 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Siguiente here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (DANIEL) 
+ * @version (25/05/15)
  */
 public class Siguiente extends Icono
 {
-    /**
-     * Act - do whatever the Siguiente wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     private int iTipo;
     private Actor act;
     public Siguiente(int tipo,Actor actor){

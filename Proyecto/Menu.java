@@ -26,7 +26,7 @@ public class Menu extends World
         iCount = 0;
         iIniTutorial = 0;
         contador=0;
-        iniciaJuego=false;
+        iniciaJuego = false;
         setMenu();
     }
 
@@ -44,14 +44,16 @@ public class Menu extends World
                     bAyuda = new Background(0,0,0,2);
                     addObject(bAyuda,(getWidth()/2),(getHeight()/2));
                     sFlecha = new Siguiente(1,null);
-                    addObject(sFlecha,575,205);
+                    addObject(sFlecha,575,905);
                 }
             }  
         }
         else
         {
             contador++;
-            if(contador==120){Greenfoot.setWorld(new Vecindad());}
+            if(contador==120){
+                Greenfoot.setWorld(new Vecindad());
+            }
         }
     }
 
@@ -60,18 +62,15 @@ public class Menu extends World
         bEscenario = new Background(0,0,0,0);     
         addObject(bEscenario,(getWidth()/2),(getHeight()/2));
         jJuego = new Jugar();
-        addObject(jJuego,130,450);
+        addObject(jJuego,230,450);
         tAyuda = new Tutorial();
-        addObject(tAyuda,380,450);
+        addObject(tAyuda,480,450);
         cQuien = new Creditos(1);
-        addObject(cQuien,880,450);
-        rScores = new Records();
-        addObject(rScores,630,450);
+        addObject(cQuien,730,450);
     }
 
     public void desapareceTutorial(){
         jJuego.desaparece();
-        //rScores.desaparece();
     }
 
     public void desapareceRecords(){
@@ -81,7 +80,6 @@ public class Menu extends World
 
     public void desaparecePlay(){
         tAyuda.desaparece();
-        //rScores.desaparece();
     }
 
     public void sigTutorial(){
