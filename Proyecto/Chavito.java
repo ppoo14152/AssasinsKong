@@ -288,7 +288,7 @@ public class Chavito extends Actor
                 wAux1 = getWorld();
                 wAux2 = getWorld();
                 //getWorld().removeObject(Letreros(1));
-                ((Vecindad)wAux1).eliminaVecindad();
+                ((Vecindad)wAux1).eliminaVecindad(iNivel);
             }
         }
     }

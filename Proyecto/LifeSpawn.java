@@ -2,10 +2,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Esta clase es la encargada de controlar la barra de vida del jugador
- * .
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel) 
+ * @version (25/04/2015)
  */
 public class LifeSpawn extends Chavito
 {
@@ -22,8 +21,8 @@ public class LifeSpawn extends Chavito
         iLifes = iTi;
         setImage( life[iTi] );
     }
-    public void act() 
-    {
+    public void act(){ 
+  
         
     }    
 }
