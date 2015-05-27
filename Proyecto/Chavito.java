@@ -295,7 +295,7 @@ public class Chavito extends Actor
 
     public void setTouch()
     {
-        getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
+        //getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
         if(!isTouching(Obstaculos.class)){
             isTouch = false;
         }

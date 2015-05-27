@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
+    private Niveles level;
     private Chavito chavo;
     private Chilindrina chilin;
     private Plataforma1 plataforma;
@@ -28,6 +29,7 @@ public class Vecindad extends World
     {    
         super(1020, 544, 1);
         iNivel = 1;
+        level = new Niveles(0);
         barra = new LifeSpawn(0);
         chavo = new Chavito();
         chilin = new Chilindrina();
@@ -68,6 +70,7 @@ public class Vecindad extends World
         addObject(barra, 80, 50);
         if(iNivel == 1){
             addObject(esc1,(getWidth()/2),(getHeight()/2));
+            addObject(new Niveles(0),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
@@ -83,6 +86,7 @@ public class Vecindad extends World
         }
         if(iNivel == 2){ 
             addObject(esc2,(getWidth()/2),(getHeight()/2));
+            addObject(new Niveles(1),970,25);
             addObject(pla1,411,246);
             addObject(pla2,540,395);
             addObject(pla3,571,90);
@@ -98,6 +102,7 @@ public class Vecindad extends World
         }
         if(iNivel == 3){
             addObject(esc3,(getWidth()/2),(getHeight()/2));
+            addObject(new Niveles(2),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
@@ -113,6 +118,7 @@ public class Vecindad extends World
         }
         if(iNivel == 4){
             addObject(esc4,(getWidth()/2),(getHeight()/2));
+            addObject(new Niveles(3),970,25);
             addObject(pla1,411,246);
             addObject(pla2,540,395);
             addObject(pla3,571,90);
@@ -128,6 +134,7 @@ public class Vecindad extends World
         }
         if(iNivel == 5){
             addObject(esc5,(getWidth()/2),(getHeight()/2));
+            addObject(new Niveles(4),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
