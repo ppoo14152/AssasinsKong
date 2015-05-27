@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Background extends Actor
 {
-    private GreenfootImage escenario1 = new GreenfootImage("Cenario-01.bmp");
+    /*private GreenfootImage escenario1 = new GreenfootImage("Cenario-01.bmp");
     private GreenfootImage escenario2 = new GreenfootImage("Cenario-02.bmp");
     private GreenfootImage escenario3 = new GreenfootImage("Cenario-03.bmp");
     private GreenfootImage escenario4 = new GreenfootImage("Cenario-04.bmp");
-    private GreenfootImage escenario5 = new GreenfootImage("Cenario-05.bmp");
+    private GreenfootImage escenario5 = new GreenfootImage("Cenario-05.bmp");*/
     private GreenfootImage menu  = new GreenfootImage("Fondo.jpg");
     private GreenfootImage tutorial1;
     private GreenfootImage tutorial2;
@@ -26,10 +26,8 @@ public class Background extends Actor
     private int iVel;
     private int iNivel = 1;
     public Background(int iPos, int x, int y, int iFondo){
-
         iNivel = 1;
         tBack = iFondo;
-
         if(tBack == 0){
             setImage(menu);
         }
@@ -95,7 +93,7 @@ public class Background extends Actor
     public void dameNivel(int iLevel)
     {
         iNivel = iLevel;
-        if(iNivel == 1){
+        /*if(iNivel == 1){
             setImage(escenario1);
         }
         if(iNivel == 2){
@@ -109,6 +107,6 @@ public class Background extends Actor
         }
         if(iNivel == 5){
             setImage(escenario5);
-        }
+        }*/
     }
 }

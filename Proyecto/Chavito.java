@@ -281,13 +281,14 @@ public class Chavito extends Actor
             if(iNivel == 5){
                 getWorld().addObject(new Letreros( 1 ), 500, 300);
             }
-            World wAux1;
-            World wAux2;
-            wAux1 = getWorld();
-            wAux2 = getWorld();
-            ((Vecindad)wAux1).eliminaVecindad();
-            iNivel++;
-            ((Vecindad)wAux2).Aniadir(iNivel);
+            for(int iCount = 0; iCount < 200; iCount++);
+            if(iNivel < 5){
+                World wAux1;
+                World wAux2;
+                wAux1 = getWorld();
+                wAux2 = getWorld();
+                ((Vecindad)wAux1).eliminaVecindad();
+            }
         }
     }
 
