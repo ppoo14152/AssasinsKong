@@ -12,6 +12,7 @@ public class Chilindrina extends Actor
     public GreenfootImage[] chilindrina = new GreenfootImage[10];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
     private int iDr;
     private int iAnimacion;
+    private int iAux;
     private Random iRandom;
     public Chilindrina()
     {
@@ -28,6 +29,7 @@ public class Chilindrina extends Actor
         iDr = 1;
         iAnimacion = 0;
         iRandom = new Random();
+        iAux = 0;
     }
 
     public void act() 
@@ -53,7 +55,14 @@ public class Chilindrina extends Actor
             }
             if(iAnimacion == 75){
                 setImage(chilindrina[9]);
-                getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                iAux = iRandom.nextInt(5);
+                if(iAux != 5){
+                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                }
+                if(iAux == 5){
+                    getWorld().addObject(new Torta(),700,50);
+                }
+                //getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
             if(iAnimacion == 90){
                 iAnimacion = 0;
@@ -75,7 +84,14 @@ public class Chilindrina extends Actor
             }
             if(iAnimacion == 100){
                 setImage(chilindrina[8]);
-                getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                iAux = iRandom.nextInt(5);
+                if(iAux != 5){
+                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                }
+                if(iAux == 5){
+                    getWorld().addObject(new Torta(),700,50);
+                }
+                //getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
             if(iAnimacion == 120){
                 iAnimacion = 0;

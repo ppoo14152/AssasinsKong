@@ -68,10 +68,10 @@ public class Background extends Actor
     }
 
     public void sigTutorial(){
-        if(tutorial != 200){
+        if(tutorial != 400){
             tutorial++;
         }
-        if(tutorial == 200){
+        if(tutorial == 400){
             World aux = getWorld(); 
             ((Menu)aux).quitaTutorial();
         }
@@ -81,32 +81,13 @@ public class Background extends Actor
         if(tutorial == 0){
             setImage(tutorial1);
         }
-        if(tutorial == 100){
+        if(tutorial == 200){
             setImage(tutorial2);
         }
-        if(tutorial == 200){
+        if(tutorial == 400){
             setImage(tutorial3);
         } 
         sigTutorial();
     }
 
-    public void dameNivel(int iLevel)
-    {
-        iNivel = iLevel;
-        /*if(iNivel == 1){
-            setImage(escenario1);
-        }
-        if(iNivel == 2){
-            setImage(escenario2);
-        }
-        if(iNivel == 3){
-            setImage(escenario3);
-        }
-        if(iNivel == 4){
-            setImage(escenario4);
-        }
-        if(iNivel == 5){
-            setImage(escenario5);
-        }*/
-    }
 }

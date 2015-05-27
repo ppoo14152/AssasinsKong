@@ -10,7 +10,6 @@ public class Menu extends World
 {
     private Tutorial tAyuda;
     private Jugar jJuego;
-    private Records rScores;
     private Siguiente sFlecha;
     private Background bEscenario;
     private Background bAyuda;
@@ -106,7 +105,7 @@ public class Menu extends World
 
     public void iniciarJuego()
     {
-        contador=0;
-        iniciaJuego=true;
+        contador = 0;
+        iniciaJuego = true;
     }
 }

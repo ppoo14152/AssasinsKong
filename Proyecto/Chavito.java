@@ -305,7 +305,7 @@ public class Chavito extends Actor
         if(isTouching(Torta.class) && isTouch == false){
             isTouch = true;
             iLife = iLife - 1;
-            //getWorld().removeObject(Torta().class);
+            //getWorld().removeObject(Torta);
         }
     }
 

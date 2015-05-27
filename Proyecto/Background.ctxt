@@ -11,6 +11,4 @@ comment4.params=
 comment4.target=void\ sigTutorial()
 comment5.params=
 comment5.target=void\ Tutorial()
-comment6.params=iLevel
-comment6.target=void\ dameNivel(int)
-numComments=7
+numComments=6
