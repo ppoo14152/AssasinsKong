@@ -67,8 +67,8 @@ public class Vecindad extends World
          */
         int iFondo = iNivel - 1;
         iNivel = iAcomodar;
-        addObject(barra, 80, 50);
         if(iNivel == 1){
+            addObject(barra, 80, 50);
             addObject(esc1,(getWidth()/2),(getHeight()/2));
             addObject(new Niveles(0),970,25);
             addObject(pla1,511,245);
@@ -85,6 +85,7 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 2){ 
+            addObject(barra, 80, 50);
             addObject(esc2,(getWidth()/2),(getHeight()/2));
             addObject(new Niveles(1),970,25);
             addObject(pla1,411,246);
@@ -101,6 +102,7 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 3){
+            addObject(barra, 80, 50);
             addObject(esc3,(getWidth()/2),(getHeight()/2));
             addObject(new Niveles(2),970,25);
             addObject(pla1,511,245);
@@ -117,6 +119,7 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 4){
+            addObject(barra, 80, 50);
             addObject(esc4,(getWidth()/2),(getHeight()/2));
             addObject(new Niveles(3),970,25);
             addObject(pla1,411,246);
@@ -133,6 +136,7 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 5){
+            addObject(barra, 80, 50);
             addObject(esc5,(getWidth()/2),(getHeight()/2));
             addObject(new Niveles(4),970,25);
             addObject(pla1,511,245);
