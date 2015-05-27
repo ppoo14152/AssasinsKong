@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Obstaculos extends Chilindrina
 {
-    public GreenfootImage[] obstaculos = new GreenfootImage[4];
+    private GreenfootImage[] obstaculos = new GreenfootImage[4];
     private int iDireccion;
     private int iTipo;
     private int iX;

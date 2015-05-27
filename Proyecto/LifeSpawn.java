@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class LifeSpawn extends Chavito
 {
-    public GreenfootImage[] life = new GreenfootImage[6];
+    private GreenfootImage[] life = new GreenfootImage[6];
     private int iLifes;
     public LifeSpawn(int iTi)
     {

@@ -2,11 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.Thread;  
 public class Chavito extends Actor  
 {
-    public GreenfootImage[] chavo = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
+    private GreenfootImage[] chavo = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
     private boolean isAbove;   //  Se activa cuando esta sobre una plataforma
     private boolean inStair;
     private boolean gravity;
-    public boolean bWin;
+    private boolean bWin;
     private boolean isTouch;
     private int upStair;   
     private int walkTimer;
@@ -14,10 +14,10 @@ public class Chavito extends Actor
     private int iBandera2;
     private int iCount;
     private int iDireccion;
-    public int iLife;
+    private int iLife;
     private int iAnimacion;
     private int iEdo;
-    public int iNivel;
+    private int iNivel;
     private int iAuxiliar;
     public Chavito()
     {

@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Paty extends Actor
 {
-    public GreenfootImage[] paty = new GreenfootImage[3];
-    int iAccion;
+    private GreenfootImage[] paty = new GreenfootImage[3];
+    private int iAccion;
     public Paty()
     {
         paty[0] = new GreenfootImage("paty1.png");

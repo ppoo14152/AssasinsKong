@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class Chilindrina extends Actor
 {
-    public GreenfootImage[] chilindrina = new GreenfootImage[10];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
+    private GreenfootImage[] chilindrina = new GreenfootImage[10];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento de el enemigo
     private int iDr;
     private int iAnimacion;
     private int iAux;
@@ -55,14 +55,13 @@ public class Chilindrina extends Actor
             }
             if(iAnimacion == 75){
                 setImage(chilindrina[9]);
-                iAux = iRandom.nextInt(5);
+                iAux = iRandom.nextInt(6);
                 if(iAux != 5){
                     getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
                 }
                 if(iAux == 5){
                     getWorld().addObject(new Torta(),700,50);
                 }
-                //getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
             if(iAnimacion == 90){
                 iAnimacion = 0;

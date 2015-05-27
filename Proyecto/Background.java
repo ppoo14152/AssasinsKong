@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Background extends Actor
 {
-    /*private GreenfootImage escenario1 = new GreenfootImage("Cenario-01.bmp");
-    private GreenfootImage escenario2 = new GreenfootImage("Cenario-02.bmp");
-    private GreenfootImage escenario3 = new GreenfootImage("Cenario-03.bmp");
-    private GreenfootImage escenario4 = new GreenfootImage("Cenario-04.bmp");
-    private GreenfootImage escenario5 = new GreenfootImage("Cenario-05.bmp");*/
     private GreenfootImage menu  = new GreenfootImage("Fondo.jpg");
     private GreenfootImage tutorial1;
     private GreenfootImage tutorial2;
