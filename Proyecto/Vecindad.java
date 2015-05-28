@@ -68,8 +68,8 @@ public class Vecindad extends World
         int iFondo = iNivel - 1;
         iNivel = iAcomodar;
         if(iNivel == 1){
-            addObject(barra, 80, 50);
             addObject(esc1,(getWidth()/2),(getHeight()/2));
+            addObject(barra, 80, 50);
             addObject(new Niveles(0),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
@@ -85,8 +85,8 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 2){ 
-            addObject(barra, 80, 50);
             addObject(esc2,(getWidth()/2),(getHeight()/2));
+            addObject(barra, 80, 50);
             addObject(new Niveles(1),970,25);
             addObject(pla1,411,246);
             addObject(pla2,540,395);
@@ -102,8 +102,8 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 3){
-            addObject(barra, 80, 50);
             addObject(esc3,(getWidth()/2),(getHeight()/2));
+            addObject(barra, 80, 50);
             addObject(new Niveles(2),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
@@ -119,8 +119,8 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 4){
-            addObject(barra, 80, 50);
             addObject(esc4,(getWidth()/2),(getHeight()/2));
+            addObject(barra, 80, 50);
             addObject(new Niveles(3),970,25);
             addObject(pla1,411,246);
             addObject(pla2,540,395);
@@ -136,8 +136,8 @@ public class Vecindad extends World
             addObject(popis,800,50);
         }
         if(iNivel == 5){
-            addObject(barra, 80, 50);
             addObject(esc5,(getWidth()/2),(getHeight()/2));
+            addObject(barra, 80, 50);
             addObject(new Niveles(4),970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
@@ -191,11 +191,21 @@ public class Vecindad extends World
 
     public void setCreate(int Acomodar)
     {
-        esc1 = new Vecindad1();
-        esc2 = new Vecindad2();
-        esc3 = new Vecindad3();
-        esc4 = new Vecindad4();
-        esc5 = new Vecindad5();
+        if(Acomodar == 1){
+            esc1 = new Vecindad1();
+        }
+        if(Acomodar == 2){
+            esc2 = new Vecindad2();
+        }
+        if(Acomodar == 3){
+            esc3 = new Vecindad3();
+        }
+        if(Acomodar == 4){
+            esc4 = new Vecindad4();
+        }
+        if(Acomodar == 5){
+            esc5 = new Vecindad5();
+        }
         barra = new LifeSpawn(0);
         chavo = new Chavito();
         chilin = new Chilindrina();

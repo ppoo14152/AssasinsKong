@@ -4,6 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Se encarga de colocar todas las imagens de fondo tales como elmenu
  * Tutoriales y Creditos
  * @author (Daniel) 
+ * Creditos para CaracteresLarouse
  * @version (26/05/15)
  */
 public class Background extends Actor
@@ -26,14 +27,12 @@ public class Background extends Actor
         if(tBack == 0){
             setImage(menu);
         }
-
         if(tBack == 1){                     
             iNum = iPos;
-            x1=x;
-            y1=y;  
+            x1 = x;
+            y1 = y;  
             iVel = 1;
         } 
-
         if(tBack == 2){
             cargaImagenesTutorial();
         }

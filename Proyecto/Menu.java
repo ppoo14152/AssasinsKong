@@ -42,8 +42,6 @@ public class Menu extends World
                 {
                     bAyuda = new Background(0,0,0,2);
                     addObject(bAyuda,(getWidth()/2),(getHeight()/2));
-                    sFlecha = new Siguiente(1,null);
-                    addObject(sFlecha,575,905);
                 }
             }  
         }

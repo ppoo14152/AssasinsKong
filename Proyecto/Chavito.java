@@ -295,18 +295,21 @@ public class Chavito extends Actor
 
     public void setTouch()
     {
-        //getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
         if(!isTouching(Obstaculos.class)){
+            isTouch = false;
+        }
+        if(!isTouching(Torta.class)){
             isTouch = false;
         }
         if(isTouching(Obstaculos.class) && isTouch == false){
             isTouch = true;
+            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
             iLife = iLife + 1;
         }
         if(isTouching(Torta.class) && isTouch == false){
             isTouch = true;
+            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
             iLife = iLife - 1;
-            //getWorld().removeObject(Torta);
         }
     }
 

@@ -4,5 +4,5 @@ comment0.target=Torta()
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
-comment2.target=void\ tortear()
+comment2.target=void\ setWhatCanItDo()
 numComments=3
