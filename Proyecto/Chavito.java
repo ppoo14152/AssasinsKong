@@ -1,4 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+//Esta clase se encarga de todo lo que puede hacer el chavo
+import greenfoot.*; 
 import java.lang.Thread;  
 public class Chavito extends Actor  
 {
@@ -284,10 +285,7 @@ public class Chavito extends Actor
             for(int iCount = 0; iCount < 200; iCount++);
             if(iNivel < 5){
                 World wAux1;
-                World wAux2;
                 wAux1 = getWorld();
-                wAux2 = getWorld();
-                //getWorld().removeObject(Letreros(1));
                 ((Vecindad)wAux1).eliminaVecindad(iNivel);
             }
         }
