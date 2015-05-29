@@ -14,11 +14,9 @@ public class Icono extends Actor
      */
     private int iNum;
     protected int desaparece;
-    private GreenfootSound soundBoton;
     public void act() 
     {
         iNum = 0;
-        soundBoton = new GreenfootSound("Sound1.wav");
     }
     
     public void mouseSobreBoton(){
@@ -30,9 +28,4 @@ public class Icono extends Actor
         }      
     }
         
-    public void sonidoBoton()
-    {        
-      //soundBoton.play();
-    }
-    
 }

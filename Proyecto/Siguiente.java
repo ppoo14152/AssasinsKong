@@ -10,6 +10,7 @@ public class Siguiente extends Icono
 {
     private int iTipo;
     private Actor act;
+    private GreenfootSound soundBoton = new GreenfootSound("Sound1.wav");
     public Siguiente(int tipo,Actor actor){
         iTipo = tipo;
         act = actor;
@@ -21,7 +22,7 @@ public class Siguiente extends Icono
             this.getImage().scale(40,40);
             if(Greenfoot.mouseClicked(this))
             {
-                this.sonidoBoton();
+                soundBoton.play();
                 this.getImage().scale(60,60);
                 World aux=getWorld();
                 ((Menu)aux).sigTutorial();                            
@@ -29,7 +30,7 @@ public class Siguiente extends Icono
         }
         if(iTipo == 2){
             if(Greenfoot.mouseClicked(this)){
-                this.sonidoBoton();
+                soundBoton.play();
                 World aux=getWorld();
                 ((Menu)aux).vuelveMenu();
                 getWorld().removeObject(act);

@@ -11,6 +11,7 @@ public class Creditos extends Icono
     private int iTipo;
     private Creditos cAux;
     private GreenfootImage creditos = new GreenfootImage("Creditos1.jpg");
+    private GreenfootSound soundBoton = new GreenfootSound("Sound1.wav");
     public Creditos(int tip){
         desaparece = 0;
         iTipo = tip;
@@ -28,7 +29,7 @@ public class Creditos extends Icono
     {
         if(Greenfoot.mouseClicked(this))
         {
-            this.sonidoBoton();
+            soundBoton.play();
             this.getImage().scale(150+10,50+10);
             cAux = new Creditos(2);
             getWorld().addObject(cAux,510,(544/2));

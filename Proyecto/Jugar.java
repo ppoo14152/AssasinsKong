@@ -3,20 +3,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Jugar here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Daniel) 
+ * Creditos Caracteres Larousse
  */
 public class Jugar extends Icono
 {
-    /**
-     * Act - do whatever the Jugar wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private GreenfootSound soundBoton = new GreenfootSound("Sound1.wav");
     public void act() 
     {                        
         if(Greenfoot.mouseClicked(this))
         {
-            this.sonidoBoton();
+            //this.sonidoBoton();
+            soundBoton.play();
             World aux=getWorld();            
             ((Menu)aux).iniciarJuego();
         }
