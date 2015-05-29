@@ -4,11 +4,13 @@ import java.lang.Thread;
 public class Chavito extends Actor  
 {
     private GreenfootImage[] chavo = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
-    private boolean isAbove;   //  Se activa cuando esta sobre una plataforma
+    private LifeSpawn barra;
+    private boolean isAbove;  
     private boolean inStair;
     private boolean gravity;
     private boolean bWin;
     private boolean isTouch;
+    private boolean bAux;
     private int upStair;   
     private int walkTimer;
     private int iBandera;
@@ -52,10 +54,15 @@ public class Chavito extends Actor
         inStair = false;
         bWin = false;
         isTouch = false;
+        bAux = false;
     }
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
     {
+        if(bAux == false){
+            iniciaExtras(iLife,iNivel);
+            bAux = true;
+        }
         if(iLife < 6){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
         }    
@@ -73,7 +80,12 @@ public class Chavito extends Actor
         setDownStairs();    //metodo que ejecuta el bajar escaleras
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
         setWin();   //si win es true el jugador gana, si no pierde
-        setTouch(); //Si es tocado por un obstaculo pierde vida
+        setTouch(); //Si es tocado por un obstaculo pierde vida y si es tocado por una torta gana vida
+    }
+
+    public void iniciaExtras(int iLife, int iNivel){
+        /*getWorld().addObject( new LifeSpawn(iLife),150,70);
+        getWorld().addObject( new Niveles(iNivel - 1),970,25);*/
     }
 
     public void setJump()
@@ -152,6 +164,7 @@ public class Chavito extends Actor
                 }
             }
         }
+
         if(getX()>50 && inStair == false){
             if (Greenfoot.isKeyDown("left")){
                 iDireccion = 1;
@@ -287,6 +300,8 @@ public class Chavito extends Actor
                 World wAux1;
                 wAux1 = getWorld();
                 ((Vecindad)wAux1).eliminaVecindad(iNivel);
+                iLife = 0;
+                bAux = false;
             }
         }
     }
@@ -296,19 +311,19 @@ public class Chavito extends Actor
         if(!isTouching(Obstaculos.class)){
             isTouch = false;
         }
-        if(!isTouching(Torta.class)){
-            isTouch = false;
+        /*if(isTouching(Obstaculos.class) && (isTouch == false)){
+        isTouch = true;
+        iLife = iLife + 1;
+        getWorld().addObject( new LifeSpawn(iLife),150,70);
+        }*/
+
+        /*if(iLife != 0){
+        if((isTouching(Torta.class))){
+        iLife = iLife - 1;
+        getWorld().addObject( new LifeSpawn(iLife),150,70);
         }
-        if(isTouching(Obstaculos.class) && isTouch == false){
-            isTouch = true;
-            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
-            iLife = iLife + 1;
-        }
-        if(isTouching(Torta.class) && isTouch == false){
-            isTouch = true;
-            getWorld().addObject(new LifeSpawn( iLife ), 80, 50);
-            iLife = iLife - 1;
-        }
+        }*/
+
     }
 
     public void setDead()

@@ -63,7 +63,7 @@ public class Torta extends Chilindrina
         if(isTouching(Chavito.class) == true){
             getWorld().removeObject(this);
         }
-        
+  
     }
 
 }
