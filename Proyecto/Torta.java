@@ -30,6 +30,7 @@ public class Torta extends Chilindrina
     }   
 
     public void setWhatCanItDo(){
+        
         if(onFloor == false){
             if(isTouching(Escalera.class) || (!isTouching(Plataforma.class))){
                 setLocation(getX(),getY()+2);
@@ -59,11 +60,9 @@ public class Torta extends Chilindrina
             if( (getX()<=20) || (getX()>1000) ){
                 getWorld().removeObject(this);
             }
+            
         }
-        if(isTouching(Chavito.class) == true){
-            getWorld().removeObject(this);
-        }
-  
+        
     }
 
 }

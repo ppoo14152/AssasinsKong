@@ -20,7 +20,8 @@ public class LifeSpawn extends Chavito
         life[5] = new GreenfootImage("LifeSpawn6.png");
         setImage( life[iTi] );
     }
-    public void act(int iTi){ 
-        //setImage( life[iTi] );
-    }    
+    public void act()
+    {
+        
+    }
 }

@@ -4,7 +4,6 @@ import java.lang.Thread;
 public class Chavito extends Actor  
 {
     private GreenfootImage[] chavo = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
-    private LifeSpawn barra;
     private boolean isAbove;  
     private boolean inStair;
     private boolean gravity;
@@ -59,10 +58,6 @@ public class Chavito extends Actor
     //Esta clase se encarga de todo lo que puede hacer el chavo siempre y cuando este tenga aun vida//
     public void act()
     {
-        if(bAux == false){
-            iniciaExtras(iLife,iNivel);
-            bAux = true;
-        }
         if(iLife < 6){
             setActions();  //Ejecuta todas las acciones que puede realizar el actor 
         }    
@@ -81,11 +76,6 @@ public class Chavito extends Actor
         setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
         setWin();   //si win es true el jugador gana, si no pierde
         setTouch(); //Si es tocado por un obstaculo pierde vida y si es tocado por una torta gana vida
-    }
-
-    public void iniciaExtras(int iLife, int iNivel){
-        /*getWorld().addObject( new LifeSpawn(iLife),150,70);
-        getWorld().addObject( new Niveles(iNivel - 1),970,25);*/
     }
 
     public void setJump()
@@ -308,22 +298,20 @@ public class Chavito extends Actor
 
     public void setTouch()
     {
-        if(!isTouching(Obstaculos.class)){
-            isTouch = false;
-        }
-        /*if(isTouching(Obstaculos.class) && (isTouch == false)){
-        isTouch = true;
-        iLife = iLife + 1;
-        getWorld().addObject( new LifeSpawn(iLife),150,70);
-        }*/
-
-        /*if(iLife != 0){
         if((isTouching(Torta.class))){
-        iLife = iLife - 1;
-        getWorld().addObject( new LifeSpawn(iLife),150,70);
+            removeTouching(Torta.class);
+            if(iLife!=0){
+                iLife--;
+                LifeSpawn lAux = new LifeSpawn(iLife);
+                getWorld().addObject(lAux,80,50);
+            }
         }
-        }*/
-
+        if((isTouching(Obstaculos.class))){
+            removeTouching(Obstaculos.class);
+            iLife++;
+            LifeSpawn lAux = new LifeSpawn(iLife);
+            getWorld().addObject(lAux,80,50);
+        }
     }
 
     public void setDead()
