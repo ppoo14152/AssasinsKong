@@ -278,14 +278,22 @@ public class Chavito extends Actor
     {
         if(isTouching(Paty.class)){
             bWin = true;
-            if(iNivel < 5){
+            Letreros lAuxiliar1 = new Letreros( 1 );
+            Letreros lAuxiliar2 = new Letreros( 2 );
+            /*if(iNivel < 5){
                 getWorld().addObject(new Letreros( 1 ), 500, 300);
                 getWorld().addObject(new Letreros( 2 ), 500, 700);
+            }*/
+            if(iNivel < 5){
+                getWorld().addObject(lAuxiliar1, 500, 300);
+                getWorld().addObject(lAuxiliar2, 500, 700);
             }
             if(iNivel == 5){
-                getWorld().addObject(new Letreros( 1 ), 500, 300);
+                getWorld().addObject(lAuxiliar1, 500, 300);
             }
             for(int iCount = 0; iCount < 200; iCount++);
+            getWorld().removeObject(lAuxiliar1);
+            getWorld().removeObject(lAuxiliar2);
             if(iNivel < 5){
                 World wAux1;
                 wAux1 = getWorld();
@@ -333,7 +341,12 @@ public class Chavito extends Actor
             }
         }
         if(iAnimacion == 20){
-            getWorld().addObject(new Letreros( 0 ), 500, 300);
+            Letreros lAuxiliar = new Letreros(0);
+            getWorld().addObject(lAuxiliar, 500, 300);
+            for(int i = 0; i < 250; i++);
+            getWorld().removeObject(lAuxiliar);
+            World aux = getWorld(); 
+            ((Menu)aux).setMenu();
         }
         iAnimacion++;
     }
