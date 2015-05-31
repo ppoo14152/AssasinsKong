@@ -57,10 +57,10 @@ public class Vecindad extends World
 
     public void act()
     {
-        Aniadir(iNivel);
+        setAddObjects(iNivel);
     }
 
-    public void Aniadir(int iAcomodar)
+    public void setAddObjects(int iAcomodar)
     {
         /**
          * Dependiendo del nivel
@@ -82,7 +82,7 @@ public class Vecindad extends World
             addObject(stair4,465,145);
             addObject(stair5,750,145);
             addObject(chavo,100,485);
-            addObject(chilin,700,40);
+            addObject(chilin,600,40);
             addObject(popis,800,50);
         }
         if(iNivel == 2){ 
@@ -98,7 +98,7 @@ public class Vecindad extends World
             addObject(stair4,600,145);
             addObject(stair5,400,145);
             addObject(chavo,100,485);
-            addObject(chilin,700,40);
+            addObject(chilin,600,40);
             addObject(popis,800,50);
         }
         if(iNivel == 3){
@@ -114,7 +114,7 @@ public class Vecindad extends World
             addObject(stair4,465,145);
             addObject(stair5,750,145);
             addObject(chavo,100,485);
-            addObject(chilin,700,40);
+            addObject(chilin,600,40);
             addObject(popis,800,50);
         }
         if(iNivel == 4){
@@ -130,7 +130,7 @@ public class Vecindad extends World
             addObject(stair4,600,145);
             addObject(stair5,400,145);
             addObject(chavo,100,485);
-            addObject(chilin,700,40);
+            addObject(chilin,600,40);
             addObject(popis,800,50);
         }
         if(iNivel == 5){
@@ -147,7 +147,7 @@ public class Vecindad extends World
             addObject(stair4,465,145);
             addObject(stair5,750,145);
             addObject(chavo,100,485);
-            addObject(chilin,700,40);
+            addObject(chilin,600,40);
             addObject(popis,800,50);
         }
     }
@@ -185,10 +185,6 @@ public class Vecindad extends World
         removeObject(stair5);
         removeObject(chilin);
         removeObject(p1);
-        if(Acomodar != 5){
-            Acomodar = Acomodar + 1;
-            setCreate(Acomodar);
-        }
     }
 
     public void setCreate(int Acomodar)

@@ -57,10 +57,10 @@ public class Chilindrina extends Actor
                 setImage(chilindrina[9]);
                 iAux = iRandom.nextInt(6);
                 if(iAux != 5){
-                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),600,50);
                 }
                 if(iAux == 5){
-                    getWorld().addObject(new Torta(),700,50);
+                    getWorld().addObject(new Torta(),600,50);
                 }
             }
             if(iAnimacion == 90){
@@ -85,10 +85,10 @@ public class Chilindrina extends Actor
                 setImage(chilindrina[8]);
                 iAux = iRandom.nextInt(5);
                 if(iAux != 5){
-                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
+                    getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),600,50);
                 }
                 if(iAux == 5){
-                    getWorld().addObject(new Torta(),700,50);
+                    getWorld().addObject(new Torta(),600,50);
                 }
                 //getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
