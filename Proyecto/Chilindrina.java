@@ -41,19 +41,19 @@ public class Chilindrina extends Actor
     {
         //Si direccion es igual a 1, se mostrara las imagenes del lado derecho, si es izquierda se ostraran del lado derecho
         if(iDr == 1){
-            if(iAnimacion == 15){
+            if(iAnimacion == 10){
                 setImage(chilindrina[1]);
             }
-            if(iAnimacion == 30){
+            if(iAnimacion == 25){
                 setImage(chilindrina[3]);
             }
-            if(iAnimacion == 45){
+            if(iAnimacion == 40){
                 setImage(chilindrina[5]);
             }
-            if(iAnimacion == 60){
+            if(iAnimacion == 55){
                 setImage(chilindrina[7]);
             }
-            if(iAnimacion == 75){
+            if(iAnimacion == 70){
                 setImage(chilindrina[9]);
                 iAux = iRandom.nextInt(6);
                 if(iAux != 5){
@@ -63,25 +63,25 @@ public class Chilindrina extends Actor
                     getWorld().addObject(new Torta(),600,50);
                 }
             }
-            if(iAnimacion == 90){
+            if(iAnimacion == 85){
                 iAnimacion = 0;
             }
             iAnimacion++;
         }
         if(iDr == 2){
-            if(iAnimacion == 20){
+            if(iAnimacion == 10){
                 setImage(chilindrina[0]);
             }
-            if(iAnimacion == 40){
+            if(iAnimacion == 25){
                 setImage(chilindrina[2]);
             }
-            if(iAnimacion == 60){
+            if(iAnimacion == 40){
                 setImage(chilindrina[4]);
             }
-            if(iAnimacion == 80){
+            if(iAnimacion == 55){
                 setImage(chilindrina[6]);
             }
-            if(iAnimacion == 100){
+            if(iAnimacion == 70){
                 setImage(chilindrina[8]);
                 iAux = iRandom.nextInt(5);
                 if(iAux != 5){
@@ -90,9 +90,8 @@ public class Chilindrina extends Actor
                 if(iAux == 5){
                     getWorld().addObject(new Torta(),600,50);
                 }
-                //getWorld().addObject(new Obstaculos(iRandom.nextInt(4)),700,50);
             }
-            if(iAnimacion == 120){
+            if(iAnimacion == 85){
                 iAnimacion = 0;
             }
             iAnimacion++;

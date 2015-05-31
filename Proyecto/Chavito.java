@@ -3,6 +3,7 @@ import greenfoot.*;
 import java.lang.Thread;  
 public class Chavito extends Actor  
 {
+    private Thread t;
     private GreenfootImage[] chavo = new GreenfootImage[14];//El arreglo de tipo GreenfootImage guarda todas las imagenes que pertenecen al movimiento del actor
     private boolean isAbove;  
     private boolean inStair;
@@ -10,6 +11,8 @@ public class Chavito extends Actor
     private boolean bWin;
     private boolean isTouch;
     private boolean bAux;
+    private int iNivelAux;
+    private int iNivel;
     private int upStair;   
     private int walkTimer;
     private int iBandera;
@@ -19,11 +22,11 @@ public class Chavito extends Actor
     private int iLife;
     private int iAnimacion;
     private int iEdo;
-    private int iNivel;
     private int iAuxiliar;
     private LifeSpawn lAux;
     public Chavito()
     {
+        t = new Thread();
         chavo[0] = new GreenfootImage("chavo1.png");//camina1
         chavo[1] = new GreenfootImage("chavo1_izq.png");//camina1 izq
         chavo[2] = new GreenfootImage("chavo2.png");//camina2
@@ -279,26 +282,22 @@ public class Chavito extends Actor
     {
         if(isTouching(Paty.class)){
             bWin = true;
-            Letreros lAuxiliar1 = new Letreros( 1 );
-            Letreros lAuxiliar2 = new Letreros( 2 ); 
-            if(iNivel < 5){
-                getWorld().addObject(lAuxiliar1, 500, 100);
-                getWorld().addObject(lAuxiliar2, 500, 400);
-                for(int i=0;i<250;i++);
-                getWorld().removeObject(lAuxiliar1);
-                getWorld().removeObject(lAuxiliar2);
+            if(iNivel != 5){
+                Letreros lAuxiliar1 = new Letreros( 1 );
+                Letreros lAuxiliar2 = new Letreros( 2 ); 
+                for(int iCount=0; iCount < 3000; iCount++){
+                    getWorld().addObject(lAuxiliar1, 500, 100);
+                    getWorld().addObject(lAuxiliar2, 500, 400);
+                    getWorld().removeObject(lAuxiliar1);
+                    getWorld().removeObject(lAuxiliar2);
+
+                }
                 World wAux1 = getWorld();
-                World wAux2 = getWorld();
-                World wAux3 = getWorld();
                 iLife = 0;
-                //eliminaVecindad eliminara todos los objetos que actuan en la clase vecindad
                 ((Vecindad)wAux1).eliminaVecindad(iNivel);
-                iNivel++;
-                //despues de aumentar el nivel se crearan y añadiran nuevos objetos que actuaran en la clase vecidnad
-                ((Vecindad)wAux2).setCreate(iNivel);
-                ((Vecindad)wAux3).setAddObjects(iNivel);
             }
             if(iNivel == 5){
+                Letreros lAuxiliar1 = new Letreros( 1 );
                 getWorld().addObject(lAuxiliar1, 500, 100);
             }
         }
@@ -306,18 +305,18 @@ public class Chavito extends Actor
 
     public void setTouch()
     {
-        /*if(isTouching(Torta.class) && iLife!=0){
-        iLife--;
-        LifeSpawn lAux = new LifeSpawn(iLife);
-        removeTouching(Torta.class);
-        getWorld().addObject(lAux,80,50);
+        if(isTouching(Torta.class) && iLife!=0){
+            iLife--;
+            LifeSpawn lAux = new LifeSpawn(iLife);
+            removeTouching(Torta.class);
+            getWorld().addObject(lAux,80,50);
         }
         if((isTouching(Obstaculos.class) == true)){
-        iLife++;
-        LifeSpawn lAux = new LifeSpawn(iLife);
-        removeTouching(Obstaculos.class);
-        getWorld().addObject(lAux,80,50);
-        }*/
+            iLife++;
+            LifeSpawn lAux = new LifeSpawn(iLife);
+            removeTouching(Obstaculos.class);
+            getWorld().addObject(lAux,80,50);
+        }
     }
 
     public void setDead()

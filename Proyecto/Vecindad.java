@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Vecindad extends World
 {
+    private GreenfootSound soundBoton = new GreenfootSound("musica-01.wav");
     private Niveles level;
     private Chavito chavo;
     private Chilindrina chilin;
@@ -32,7 +33,6 @@ public class Vecindad extends World
         barra = new LifeSpawn(0);
         nivel1 = new Niveles(0);
         iNivel = 1;
-        level = new Niveles(0);
         chavo = new Chavito();
         chilin = new Chilindrina();
         plataforma = new Plataforma1();
@@ -67,6 +67,7 @@ public class Vecindad extends World
          * se añadiran en cierto orden las ecaleras
          * y tambien las plataformas.
          */
+        soundBoton.play();
         iNivel = iAcomodar;
         if(iNivel == 1){
             addObject(esc1,(getWidth()/2),(getHeight()/2));
@@ -88,10 +89,11 @@ public class Vecindad extends World
         if(iNivel == 2){ 
             addObject(esc2,(getWidth()/2),(getHeight()/2));
             addObject(barra,80,50);
-            addObject(pla1,411,246);
-            addObject(pla2,540,395);
-            addObject(pla3,571,90);
-            addObject(plataforma1,510,282);
+            addObject(nivel1,970,25);
+            addObject(pla1,511,245);
+            addObject(pla2,473,395);
+            addObject(pla3,549,95);
+            addObject(plataforma,511,282);
             addObject(stair,300,450);
             addObject(stair2,750,450);
             addObject(stair3,500,298);
@@ -104,6 +106,7 @@ public class Vecindad extends World
         if(iNivel == 3){
             addObject(esc3,(getWidth()/2),(getHeight()/2));
             addObject(barra,80,50);
+            addObject(nivel1,970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
@@ -120,10 +123,11 @@ public class Vecindad extends World
         if(iNivel == 4){
             addObject(esc4,(getWidth()/2),(getHeight()/2));
             addObject(barra,80,50);
-            addObject(pla1,411,246);
-            addObject(pla2,540,395);
-            addObject(pla3,571,90);
-            addObject(plataforma1,510,282);
+            addObject(nivel1,970,25);
+            addObject(pla1,511,245);
+            addObject(pla2,473,395);
+            addObject(pla3,549,95);
+            addObject(plataforma,511,282);
             addObject(stair,300,450);
             addObject(stair2,750,450);
             addObject(stair3,500,298);
@@ -136,7 +140,7 @@ public class Vecindad extends World
         if(iNivel == 5){
             addObject(esc5,(getWidth()/2),(getHeight()/2));
             addObject(barra,80,50);
-            addObject(new Niveles(4),970,25);
+            addObject(nivel1,970,25);
             addObject(pla1,511,245);
             addObject(pla2,473,395);
             addObject(pla3,549,95);
@@ -185,10 +189,13 @@ public class Vecindad extends World
         removeObject(stair5);
         removeObject(chilin);
         removeObject(p1);
+        iNivel = iNivel +1;
+        setCreate(iNivel);
     }
 
     public void setCreate(int Acomodar)
     {
+        //iNivel = iNivel + 1;
         if(Acomodar == 1){
             esc1 = new Vecindad1();
             nivel1 = new Niveles(0);
@@ -225,5 +232,6 @@ public class Vecindad extends World
         stair6 = new Escalera();
         stair7 = new Escalera();
         popis = new Paty();
+        setAddObjects(iNivel);
     }
 }
