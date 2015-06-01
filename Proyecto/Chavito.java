@@ -27,6 +27,7 @@ public class Chavito extends Actor
     private int iAnimacion;
     private int iEdo;
     private int iAuxiliar;
+    private int iContador;
     private LifeSpawn lAux;
     public Chavito()
     {
@@ -291,13 +292,12 @@ public class Chavito extends Actor
             if(iNivel != 5){
                 Letreros lAuxiliar1 = new Letreros( 1 );
                 Letreros lAuxiliar2 = new Letreros( 2 ); 
-                for(int i=0; i<4500;i++){
-                    if(iCount == 0){
+                for(iContador=0;iContador<4500;iContador++){
+                    if(iContador == 1){
                         getWorld().addObject(lAuxiliar1, 500, 100);
                         getWorld().addObject(lAuxiliar2, 500, 400);
-
                     }
-                    if(iCount == 4499){
+                    if(iContador == 4498){
                         getWorld().removeObject(lAuxiliar1);
                         getWorld().removeObject(lAuxiliar2);
                     }
