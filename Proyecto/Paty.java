@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Esta clase se encarga de todo lo relacionado con Paty
  * 
- * @author (Mayra Karina) 
- * @version (a version number or a date)
+ * @author (Daniel) 
+ * @version (2)
  */
 public class Paty extends Actor
 {

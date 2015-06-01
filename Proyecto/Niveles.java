@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (Daniel) 
  * @version (27/05/15)
+ * Corresponde a la imagen que indica en que nivel jugamos
  */
 public class Niveles extends Actor
 {

@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Esta clase es la encargada de controlar la barra de vida del jugador
+ * Esta clase es la encargada de controlar la barra de vida del jugador.
  * 
  * @author (Daniel) 
  * @version (25/04/2015)

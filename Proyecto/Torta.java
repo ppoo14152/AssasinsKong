@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * Cada que el jugador coma una torta
  * Aumentara 1 nivel su barra 
- * De Vida
+ * De Vida.
  * @author (Daniel) 
  * @version (36/05/15)
  */

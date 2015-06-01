@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Write a description of class Jugar here.
  * 
  * @author (Daniel) 
- * Creditos Caracteres Larousse
+ * Creditos Caracteres Larousse.
  */
 public class Jugar extends Icono
 {

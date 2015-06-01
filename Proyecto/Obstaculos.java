@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
 /**
- * Todos las cosas que lanzara la chilindrina
+ * Todos las cosas que lanzara la chilindrina y quitaran vida al chavo
  * 
  * @author (Daniel) 
  * @version (16/05/15)

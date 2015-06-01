@@ -1,6 +1,11 @@
-//Esta clase se encarga de todo lo que puede hacer el chavo
 import greenfoot.*; 
 import java.lang.Thread;  
+/**
+ * Esta clase se encarga de todo lo que puede hacer el chavo
+ * 
+ * @author (Daniel) 
+ * @version (1)
+ */
 public class Chavito extends Actor  
 {
     private Thread t;
@@ -8,7 +13,6 @@ public class Chavito extends Actor
     private boolean isAbove;  
     private boolean inStair;
     private boolean gravity;
-    private boolean bWin;
     private boolean isTouch;
     private boolean bAux;
     private int iNivelAux;
@@ -55,7 +59,6 @@ public class Chavito extends Actor
         isAbove = false;
         gravity = false;
         inStair = false;
-        bWin = false;
         isTouch = false;
         bAux = false;
     }
@@ -72,14 +75,18 @@ public class Chavito extends Actor
     //setActions() se encarga de checar que tecla esta presionada para asi determinar que hacer//
     public void setActions()
     {
-        setJump();   //metodo que ejecuta el salto
-        setCrouch();   //metodo que ejecuta para agacharse 
-        setMove();    //metodo que ejecuta el movimiento 
-        setUpStairs();     //metodo que ejecuta subir escaleras
-        setDownStairs();    //metodo que ejecuta el bajar escaleras
-        setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
-        setWin();   //si win es true el jugador gana, si no pierde
-        setTouch(); //Si es tocado por un obstaculo pierde vida y si es tocado por una torta gana vida
+        if(!isTouching(Paty.class)){
+            setJump();   //metodo que ejecuta el salto
+            setCrouch();   //metodo que ejecuta para agacharse 
+            setMove();    //metodo que ejecuta el movimiento 
+            setUpStairs();     //metodo que ejecuta subir escaleras
+            setDownStairs();    //metodo que ejecuta el bajar escaleras
+            setGravity();       //metodo que ejecuta la gravedad cuando cae de una plataforma  
+            setTouch(); //Si es tocado por un obstaculo pierde vida y si es tocado por una torta gana vida
+        }
+        if(isTouching(Paty.class)){
+            setWin(); //Si el chavo toca a la popis el jugador pasara al sig nivel
+        }
     }
 
     public void setJump()
@@ -281,16 +288,19 @@ public class Chavito extends Actor
     public void setWin()
     {
         if(isTouching(Paty.class)){
-            bWin = true;
             if(iNivel != 5){
                 Letreros lAuxiliar1 = new Letreros( 1 );
                 Letreros lAuxiliar2 = new Letreros( 2 ); 
-                for(int iCount=0; iCount < 3000; iCount++){
-                    getWorld().addObject(lAuxiliar1, 500, 100);
-                    getWorld().addObject(lAuxiliar2, 500, 400);
-                    getWorld().removeObject(lAuxiliar1);
-                    getWorld().removeObject(lAuxiliar2);
+                for(int i=0; i<4500;i++){
+                    if(iCount == 0){
+                        getWorld().addObject(lAuxiliar1, 500, 100);
+                        getWorld().addObject(lAuxiliar2, 500, 400);
 
+                    }
+                    if(iCount == 4499){
+                        getWorld().removeObject(lAuxiliar1);
+                        getWorld().removeObject(lAuxiliar2);
+                    }
                 }
                 World wAux1 = getWorld();
                 iLife = 0;

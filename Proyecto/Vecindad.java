@@ -1,7 +1,16 @@
+import java.util.*;
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+/**
+ * Write a description of class Menu here.
+ * 
+ * @author (Daniel)
+ * @version (5)
+ */
 public class Vecindad extends World
 {
     private GreenfootSound soundBoton = new GreenfootSound("musica-01.wav");
+    private List listAux = new ArrayList();
+    private List listAux2 = new ArrayList();
     private Niveles level;
     private Chavito chavo;
     private Chilindrina chilin;
@@ -18,6 +27,7 @@ public class Vecindad extends World
     private Escalera stair5;
     private Escalera stair6;
     private Escalera stair7;
+    private Escalera stair8;
     private Paty popis;
     private Vecindad1 esc1;
     private Vecindad2 esc2;
@@ -99,6 +109,7 @@ public class Vecindad extends World
             addObject(stair3,500,298);
             addObject(stair4,600,145);
             addObject(stair5,400,145);
+            addObject(stair7,700,145);
             addObject(chavo,100,485);
             addObject(chilin,600,40);
             addObject(popis,800,50);
@@ -133,6 +144,7 @@ public class Vecindad extends World
             addObject(stair3,500,298);
             addObject(stair4,600,145);
             addObject(stair5,400,145);
+            addObject(stair7,700,145);
             addObject(chavo,100,485);
             addObject(chilin,600,40);
             addObject(popis,800,50);
@@ -157,22 +169,8 @@ public class Vecindad extends World
     }
 
     public void eliminaVecindad(int Acomodar)
-    {
-        if(Acomodar == 1){
-            removeObject(esc1);
-        }
-        if(Acomodar == 2){
-            removeObject(esc2);
-        }
-        if(Acomodar == 3){
-            removeObject(esc3);
-        }
-        if(Acomodar == 4){
-            removeObject(esc4);
-        }
-        if(Acomodar == 5){
-            removeObject(esc5);
-        }
+    {      
+        removeObject(chilin);
         removeObject(barra);
         removeObject(nivel1);
         removeObject(chavo);
@@ -187,8 +185,13 @@ public class Vecindad extends World
         removeObject(stair3);
         removeObject(stair4);
         removeObject(stair5);
-        removeObject(chilin);
+        removeObject(stair6);
+        removeObject(stair7);
         removeObject(p1);
+        listAux = getObjects(Obstaculos.class);
+        listAux2 = getObjects(Torta.class);
+        removeObjects(listAux);
+        removeObjects(listAux2);
         iNivel = iNivel +1;
         setCreate(iNivel);
     }

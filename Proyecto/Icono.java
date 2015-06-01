@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Buttons here.
+ * Coloca las imagenes de los iconos en el menu
  * 
- * @author (your name) 
+ * @author (Daniel) 
  * @version (a version number or a date)
+ * Creditos para caracteres Larousse
  */
 public class Icono extends Actor
 {

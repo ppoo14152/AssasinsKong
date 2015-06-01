@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Muestra en pantalla distintos tipos de mensaje segun el edo del juego
  * 
  * @author (Daniel) 
- * @version (a version number or a date)
+ * @version (2)
  */
 public class Letreros extends Chavito
 {

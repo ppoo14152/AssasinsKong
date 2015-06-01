@@ -5,7 +5,7 @@ import java.util.Random;
  * hacer el enemigo, que en este caso
  * es la Chilindrina
  * @author (Mayra Karina) 
- * @version (a version number or a date)
+ * @version (2)
  */
 public class Chilindrina extends Actor
 {

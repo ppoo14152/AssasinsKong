@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (Daniel)
  * Creditos de codigo para CaracteresLarousse
- * @version (2)
+ * @version (3)
  */
 public class Menu extends World
 {
